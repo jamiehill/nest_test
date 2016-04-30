@@ -1,9 +1,22 @@
 import App from 'components/App';
+import {indexRoute} from 'util/RouteUtil';
 
 export default {
-    onEnter: (next) => console.log('app: '+next.location.pathname),
     components: App,
-    childRoutes: [
-        require('routes/main')
-    ]
+    childRoutes: [{
+        indexRoute: indexRoute('soccer'),
+        getComponents(location, cb) {
+            require.ensure([], (require) => {
+                cb(null, {main: require('components/MainView').default});
+            })
+        },
+        childRoutes: [{
+            path: '(:sport)',
+            getComponent(location, cb) {
+                require.ensure([], (require) => {
+                    cb(null, require('components/SportView').default);
+                })
+            }
+        }]
+    }]
 };
