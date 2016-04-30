@@ -3,7 +3,7 @@ import { browserHistory } from 'react-router'
 
 class Profile extends Component {
     onClick(path) {
-        browserHistory.push('en/register/personal');
+        browserHistory.push(path);
     }
     render() {
         return (

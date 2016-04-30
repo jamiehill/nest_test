@@ -1,4 +1,4 @@
-import StandAloneView from "components/StandAloneView";
+import StandAloneView from "components/StandAlone";
 import {indexRoute} from 'util/RouteUtil';
 
 export default {
@@ -8,14 +8,14 @@ export default {
         indexRoute: indexRoute('register/profile'),
         getComponent(location, cb) {
             require.ensure([], (require) => {
-                cb(null, require('components/Register').default);
+                cb(null, require('components/standAlone/Register'));
             })
         },
         childRoutes: [{
             path: 'profile',
             getComponent(nextState, cb) {
                 require.ensure([], (require) => {
-                    cb(null, require('components/Profile').default)
+                    cb(null, require('components/standAlone/register/Profile'))
                 })
             }
         },
@@ -23,7 +23,7 @@ export default {
             path: 'personal',
             getComponent(nextState, cb) {
                 require.ensure([], (require) => {
-                    cb(null, require('components/Personal').default)
+                    cb(null, require('components/standAlone/register/Personal'))
                 })
             }
         }]

@@ -5,9 +5,11 @@ import rootRoute from 'routes/root';
 
 const update = () => {
     console.log('route: '+window.location.pathname);
-}
+};
 
 render(
-    <Router history={browserHistory} routes={rootRoute} onUpdate={update}/>,
+    <Router history={browserHistory}
+            routes={rootRoute}
+            onUpdate={update}/>,
     document.getElementById('element')
-)
+);
