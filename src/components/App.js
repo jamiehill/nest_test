@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                <h1>App Container</h1>
+                <h1>App Container 2</h1>
                 <button onClick={this.onClick.bind(this, 'en/register')}>Regsiter</button>
                 <div style={{ padding: 20 }}>
                     {this.props.main}
