@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --profile --colors --config config/webpack.config.js",
-    "build": "NODE_ENV=production BABEL_ENV=production webpack --progress -p --config config/webpack.prod.js",
+    "start": "NODE_ENV=production BABEL_ENV=production webpack --progress -p --config config/webpack.prod.js",
     "watch": "node config/dev.server.js",
     "stats": "webpack --progress --colors --info --profile --json --config config/webpack.prod.js > stats.json"
   },
